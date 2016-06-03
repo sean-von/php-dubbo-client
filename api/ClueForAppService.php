@@ -7,12 +7,14 @@ require_once 'DubboInvoker.php';
  */
 class ClueForAppService extends DubboInvoker
 {
-    public function search($startTime, $endTime, $pageNo, $pageSize){
-        return $this->getDubboClient() -> request($this->invoke(__FUNCTION__, func_get_args()));
+    public function search($startTime, $endTime, $pageNo, $pageSize)
+    {
+        return $this->getDubboClient()->request($this->invoke(__FUNCTION__, func_get_args()));
     }
 
-    public function saveClue($clueDTO){
-        return $this->getDubboClient() -> request($this->invoke(__FUNCTION__, func_get_args()));
+    public function saveClue($clueDTO)
+    {
+        return $this->getDubboClient()->request($this->invoke(__FUNCTION__, func_get_args()));
     }
 
 

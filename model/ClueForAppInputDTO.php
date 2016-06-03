@@ -19,5 +19,5 @@ class ClueForAppInputDTO
     public $ownerName;
     public $ownerId;
     public $source;
-    
+
 }
