@@ -27,8 +27,6 @@ class DubboClient
         $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);
         if ($socket === false) {
             echo "socket_create() failed: reason: " . socket_strerror(socket_last_error()) . "\n";
-        } else {
-            /*echo "OK.\n";*/
         }
         return $socket;
     }
@@ -41,14 +39,11 @@ class DubboClient
         $result = socket_connect($socket, $this->address, $this->service_port);
         if ($result === false) {
             echo "socket_connect() failed.\nReason: ($result) " . socket_strerror(socket_last_error($socket)) . "\n";
-        } else {
-            /*echo "OK. connect \n";*/
         }
     }
 
     public function request($param)
     {
-        /*echo "param is :" . $param;*/
         $socket = $this->getSocket();
         $this->connect($socket);
 
@@ -62,7 +57,6 @@ class DubboClient
                 break;
             }
         }
-        /*echo $result;*/
 
         socket_close($socket);
         return substr($result, 0, strrpos($result, '}') + 1);

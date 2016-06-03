@@ -10,7 +10,7 @@ abstract class DubboInvoker
     const prefix = "invoke";
 
     public abstract function getPackagePath();
-    
+
     public function invoke($invokeMethod, $array)
     {
         $service = $this->getPackagePath() . '.' . get_class($this) . '.' . $invokeMethod;
