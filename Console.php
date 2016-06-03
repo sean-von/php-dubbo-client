@@ -8,7 +8,7 @@ require_once __DIR__ . '/model/ClueForAppInputDTO.php';
 
 $clueForAppService = new ClueForAppService();
 
-$value = $clueForAppService->search('2016-05-02', '2016-05-03', 1, 3) . "\n";
+$value = $clueForAppService->search('2016-05-02', '2016-05-23', 1, 3) . "\n";
 echo $value;
 
 $clueDto = new ClueForAppInputDTO();

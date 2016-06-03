@@ -59,7 +59,12 @@ class DubboClient
         }
 
         socket_close($socket);
-        return substr($result, 0, strrpos($result, '}') + 1);
+        $jsonResult = substr($result, 0, strrpos($result, '}') + 1);
+        if(is_null(json_decode($jsonResult))){
+            throw new Exception("invoke remote service [" . $param . "] failed. /n" . $result);
+        }
+
+        return $jsonResult;
     }
 
 }
