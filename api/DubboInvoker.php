@@ -12,17 +12,11 @@ abstract class DubboInvoker
     private $remote_address;
     private $remote_port;
 
-    /**
-     * @param mixed $remote_address
-     */
     public function setRemoteAddress($remote_address)
     {
         $this->remote_address = $remote_address;
     }
 
-    /**
-     * @param mixed $remote_port
-     */
     public function setRemotePort($remote_port)
     {
         $this->remote_port = $remote_port;
@@ -30,6 +24,9 @@ abstract class DubboInvoker
 
     protected abstract function config();
 
+    /**
+     * 根据描述符创建 Dubbo client
+     */
     protected function getDubboClient()
     {
         $this->config();
