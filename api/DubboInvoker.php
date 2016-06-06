@@ -24,7 +24,7 @@ abstract class DubboInvoker
 
     public function getDubboClient()
     {
-        return new DubboClient('127.0.0.1', '20889');
+        return new DubboClient('127.0.0.1', '27900');
     }
 
 }
