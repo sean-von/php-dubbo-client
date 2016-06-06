@@ -62,6 +62,7 @@ class DubboClient
         socket_close($socket);
         $result = iconv("GBK", "UTF-8", $result);
         $jsonResult = substr($result, 0, strrpos($result, '}') + 1);
+
         if (is_null(json_decode($jsonResult))) {
             throw new Exception("invoke remote service [" . $param . "] failed. /n" . $result);
         }

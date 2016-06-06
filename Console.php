@@ -1,4 +1,7 @@
 <?php
+use com\lianjia\crm\api\service\ClueForAppInputDTO;
+use com\lianjia\crm\api\service\ClueForAppService;
+
 require_once __DIR__ . '/api/ClueForAppService.php';
 require_once __DIR__ . '/model/ClueForAppInputDTO.php';
 
@@ -6,7 +9,6 @@ require_once __DIR__ . '/model/ClueForAppInputDTO.php';
  * User: fengxiao
  * Date: 16/6/3
  */
-
 $clueForAppService = new ClueForAppService();
 
 $value = $clueForAppService->search('2016-05-02', '2016-05-23', 1, 3) . "\n";

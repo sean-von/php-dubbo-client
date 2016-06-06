@@ -1,4 +1,5 @@
 <?php
+namespace com\lianjia\crm\api\service;
 
 /**
  * User: fengxiao

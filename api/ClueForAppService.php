@@ -1,4 +1,8 @@
 <?php
+namespace com\lianjia\crm\api\service;
+
+use DubboInvoker;
+
 require_once 'DubboInvoker.php';
 
 /**
@@ -17,10 +21,9 @@ class ClueForAppService extends DubboInvoker
         return $this->getDubboClient()->request($this->invoke(__FUNCTION__, func_get_args()));
     }
 
-
-    public function getPackagePath()
+    protected function config()
     {
-        return "com.lianjia.crm.api.service";
+        $this->setRemoteAddress("127.0.0.1");
+        $this->setRemotePort("27900");
     }
-
 }
